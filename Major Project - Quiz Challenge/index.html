@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Time</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <!-- Remove 'quiz-started' at the end to check functionality -->
+    <div class="main-body">
+        <img src="/Images/Start Logo.svg" alt="Quiz Logo">
+        <button class="start-quiz-button">Start Now &gt;&gt;&gt;</button>
+        <p>Made with ❤️ by Faisal</p>
+
+
+        <div class="quiz-section">
+            <div class="quiz-cards">
+                <div class="image-section">
+                    <div class="logo">
+                        <img src="/Images/Start Logo.svg" alt="Quiz Logo">
+                    </div>
+                    <div class="sound-section">
+                        <img src="/Images/Volume.svg" alt="Volume-On" class="unmute">
+                        <img src="/Images/Volume_off.svg" alt="Volume-Off" class="mute">
+                    </div>
+                </div>
+                <div class="question-counter"><span class="questions-remaining"><!--01/03--></span></div>
+                <div class="question-card">
+                    <p class="question"><!-- Question goes here --></p>
+                </div>
+                <div class="timer-box">
+                    <p>00:<span class="timer"><!-- 30 --></span></p>
+                </div>
+                <div class="answer-section">
+
+                    <div class="choice-box" id="answer1">
+                        <p class="choice"><!--option goes here--></p>
+                        <!-- Change the display to flex "upon clicking" of an option later -->
+                        <div class="final-message">
+                            <p class="message">You chose</p>
+                            <div class="selected-option">
+                                <img src="/Images/WrongChoice.svg" alt="Chosen Icon" class="wrong-choice">
+                                <img src="/Images/CorrectChoice.svg" alt="Chosen Icon" class="correct-choice">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice-box" id="answer2">
+                        <p class="choice"><!--option goes here--></p>
+                        <!-- Change the display to flex "upon clicking" of an option later -->
+                        <div class="final-message">
+                            <p class="message">You chose</p>
+                            <div class="selected-option">
+                                <img src="/Images/WrongChoice.svg" alt="Chosen Icon" class="wrong-choice">
+                                <img src="/Images/CorrectChoice.svg" alt="Chosen Icon" class="correct-choice">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice-box" id="answer3">
+                        <p class="choice"><!--option goes here--></p>
+                        <!-- Change the display to flex "upon clicking" of an option later -->
+                        <div class="final-message">
+                            <p class="message">You chose</p>
+                            <div class="selected-option">
+                                <img src="/Images/WrongChoice.svg" alt="Chosen Icon" class="wrong-choice">
+                                <img src="/Images/CorrectChoice.svg" alt="Chosen Icon" class="correct-choice">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice-box" id="answer4">
+                        <p class="choice"><!--option goes here--></p>
+                        <!-- Change the display to flex "upon clicking" of an option later -->
+                        <div class="final-message">
+                            <p class="message">You chose</p>
+                            <div class="selected-option">
+                                <img src="/Images/WrongChoice.svg" alt="Chosen Icon" class="wrong-choice">
+                                <img src="/Images/CorrectChoice.svg" alt="Chosen Icon" class="correct-choice">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="next-question">Next &gt;</div>
+            </div>
+            <p>Made with ❤️ by Faisal</p>
+            <audio src="/Audios/correct-sound.mp3" id="correctSound" preload="auto"></audio>
+            <audio src="/Audios/error-126627.mp3" id="errorSound" preload="auto"></audio>
+
+        </div>
+        <div class="score-card">
+            <div class="score-bar">
+                <div class="progress-bar"><!--70%--></div>
+            </div>
+            <p class="score-info"><!-- You scored 70% --></p>
+            <p class="quotes"><!-- Well Done! You can do better! --></p>
+            <button class="try-again button">Try Again?</button>
+        </div>
+        <div class="time-up-box">
+            <p>Oops! Your time's up. Wanna try again?</p>
+            <div class="selection-buttons">
+                <button class="Yes">Yep</button>
+                <button class="No">No</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

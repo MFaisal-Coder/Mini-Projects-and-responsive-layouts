@@ -1,0 +1,548 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+:root {
+    --text-color: rgba(73, 33, 24, 1);
+    --shade-color: rgb(174, 90, 71);
+    --back-color: rgba(246, 240, 235, 1);
+    --nav-color: rgba(255, 255, 255, 1);
+    --transparent-menu: rgba(255, 255, 255, 0.75);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+.main-container-div{
+    position: relative;
+    overflow-x: hidden;
+    height: 100vh;  /* (2) This height is given so that sticky position works. Because when we give our parent element overflow hidden, the child does not stick*/
+
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+    /* (3) Also the scroll properties by default are applied to HTML but now that we gave our div a height of 100vh, the scroll properties now moved to this div because of the height. Hence we apply these properites here and comment 'html' below*/
+}
+
+/* 
+(4)
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+} */
+
+body {
+    background-color: var(--back-color);
+    /* overflow-x: hidden; */  /* (1) Overflow on body does not work in mobile devices, works only on Wider screen. hence we created 'main-container-div' and added everything to it*/
+}
+
+.header{
+    position: sticky;
+    top: 0;
+}
+
+.navbar {
+    padding: 12px 35px;
+    background-color: var(--nav-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.links {
+    display: flex;
+    gap: 65px;
+}
+
+.links span{
+    display: none;
+}
+
+/* 
+.links a + a{
+   margin-left: 60px;  
+} 
+   This adds left margin to all anchor tags except the first one.
+   This is an alternative if we dont want to use "gap" property of display flex } */
+
+.links a {
+    text-decoration-line: none;
+    color: var(--text-color);
+    font-weight: 700;
+    font-size: 20px;
+    transition: transform 0.15s ease-in-out;
+}
+
+.links a:hover {
+    color: var(--shade-color);
+    transform: scale(1.1);
+}
+
+
+.hamburger-icon-section {
+    overflow: hidden;
+    width: 70px;
+    height: 70px;
+
+    margin-inline: 30px;
+    position: relative;
+
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+
+    display: none;
+}
+
+
+.hamburger-icon {
+    background-color: white;
+    width: 120px;
+    height: 120px;
+    margin: 20px 30px;
+    border-radius: 100%;
+
+    position: absolute;
+    top: -73px;
+    right: -83px;
+    cursor: pointer;
+}
+
+.icon {
+    position: absolute;
+    bottom: 18px;
+    left: 27px;
+    font-size: 24px;
+}
+
+.hero-section {
+    max-width: 1200px;
+    margin: 115px auto;
+}
+
+.hero-section p {
+    text-align: center;
+}
+
+.hero-section img {
+    width: 100%;
+    padding-inline: 20px;
+}
+
+.section {
+    max-width: 950px;
+    margin: 115px auto;
+}
+
+.section p {
+    font-size: 48px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 64px;
+}
+
+.section img {
+    width: 100%;
+    padding-inline: 20px;
+}
+
+footer {
+    max-width: 950px;
+    margin: 0 auto;
+    padding-right: 40px;
+}
+
+footer span {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 90px;
+}
+
+footer a {
+    color: var(--text-color);
+    font-weight: 700;
+    font-size: 32px;
+    transition: transform 0.15s ease-in-out;
+}
+
+footer a:hover {
+    color: var(--shade-color);
+    transform: scale(1.1);
+}
+
+footer p {
+    color: rgba(133, 133, 133, 1);
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+
+@media screen and (max-width: 1150px) {
+    .links {
+        gap: 25px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .links {
+        gap: 25px;
+    }
+
+    .links a {
+        font-size: 16px;
+    }
+
+    .hero-section {
+        max-width: 1000px;
+        margin: 85px auto;
+    }
+
+    .hero-section p {
+        font-size: 18px;
+    }
+
+    .hero-section img {
+        padding-inline: 30px;
+    }
+
+    .section {
+        max-width: 850px;
+        margin: 95px auto;
+    }
+
+    .section p {
+        font-size: 34px;
+        margin-bottom: 44px;
+    }
+
+    .section img {
+        width: 100%;
+        padding-inline: 30px;
+    }
+
+
+    footer {
+        max-width: 780px;
+    }
+
+    footer span {
+        margin-bottom: 72px;
+    }
+
+    footer a {
+        font-size: 24px;
+    }
+
+    footer p {
+        font-size: 16px;
+        margin-bottom: 32px;
+    }
+
+}
+
+@media screen and (max-width: 830px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    header {
+        position: sticky;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        backdrop-filter: blur(10px);
+    }
+
+    .navbar {
+        padding: 12px 35px;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+    }
+
+
+    .hamburger-icon-section {
+        overflow: hidden;
+        width: 70px;
+        height: 70px;
+
+        margin-inline: 30px;
+        position: relative;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+   
+    .hamburger-icon {
+        background-color: white;
+        width: 120px;
+        height: 120px;
+        margin: 20px 30px;
+        border-radius: 100%;
+
+        position: absolute;
+        top: -73px;
+        right: -83px;
+        cursor: pointer;
+    }
+
+    .icon {
+        position: absolute;
+        bottom: 18px;
+        left: 27px;
+        font-size: 24px;
+    }
+
+    .links {
+        position: absolute;
+        top: 20px;
+        right: -240px;
+
+        background-color: var(--transparent-menu);
+        gap: 25px;
+        flex-direction: column;
+
+        padding: 25px 20px;
+        transition: right 0.3s ease-in-out;
+
+    }
+
+    .menu-on .links {
+        top: 10px;
+        right: 30px;
+        transition: right 0.3s ease-in-out;
+    }
+
+    .links a {
+        font-size: 16px;
+    }
+    .links a:first-of-type{
+        margin-top: 15px;
+    }
+
+    .menu-on .links span{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 25px;
+        height: 25px;
+
+        position: absolute;
+        top: 10px;
+        left: 180px;
+        font-size: 23px;
+        cursor: pointer;
+    }
+
+    .hero-section {
+        max-width: 1000px;
+        margin: 85px auto;
+    }
+
+    .hero-section p {
+        font-size: 18px;
+    }
+
+    .hero-section img {
+        padding-inline: 30px;
+    }
+
+    .section {
+        max-width: 850px;
+        margin: 95px auto;
+    }
+
+    .section p {
+        font-size: 34px;
+        margin-bottom: 44px;
+    }
+
+    .section img {
+        width: 100%;
+        padding-inline: 30px;
+    }
+
+
+    footer {
+        max-width: 730px;
+    }
+
+    footer span {
+        margin-bottom: 72px;
+    }
+
+    footer a {
+        font-size: 24px;
+    }
+
+    footer p {
+        font-size: 16px;
+        margin-bottom: 32px;
+    }
+
+    .menu-on .hamburger-icon-section{
+        display: none;
+    }
+
+
+}
+
+@media screen and (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    header {
+        position: sticky;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .navbar {
+        padding: 12px 30px;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+
+    .hamburger-icon-section {
+        overflow: hidden;
+        width: 70px;
+        height: 70px;
+
+        margin-inline: 30px;
+        position: relative;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hamburger-icon {
+        background-color: white;
+        width: 120px;
+        height: 120px;
+        margin: 20px 30px;
+        border-radius: 100%;
+
+        position: absolute;
+        top: -73px;
+        right: -83px;
+        cursor: pointer;
+    }
+
+    .icon {
+        position: absolute;
+        bottom: 18px;
+        left: 27px;
+        font-size: 24px;
+    }
+
+
+    .links {
+        position: absolute;
+        top: 10px;
+        right: -240px;
+
+        background-color: var(--transparent-menu);
+        gap: 25px;
+        flex-direction: column;
+
+        padding: 25px 20px;
+        transition: right 0.3s ease-in-out;
+
+    }
+
+    .menu-on .links {
+        top: 10px;
+        right: 30px;
+        transition: right 0.3s ease-in-out;
+    }
+
+    .menu-on .links span{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 25px;
+        height: 25px;
+
+        position: absolute;
+        top: 10px;
+        left: 160px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .links a {
+        font-size: 14px;
+    }
+
+    .links a:first-of-type{
+        margin-top: 15px;
+    }
+
+    .hero-section {
+        max-width: 900px;
+        margin: 75px auto;
+    }
+
+    .hero-section p {
+        font-size: 14px;
+    }
+
+    .hero-section img {
+        padding-inline: 35px;
+    }
+
+    .section {
+        max-width: 700px;
+        margin: 75px auto;
+    }
+
+    .section p {
+        font-size: 24px;
+        margin-bottom: 28px;
+    }
+
+    .section img {
+        width: 100%;
+        padding-inline: 30px;
+    }
+
+
+    footer {
+        max-width: 600px;
+    }
+
+    footer span {
+        margin-bottom: 72px;
+    }
+
+    footer a {
+        font-size: 20px;
+    }
+
+    footer p {
+        font-size: 12px;
+        margin-bottom: 32px;
+    }
+
+    .menu-on .hamburger-icon-section{
+        display: none;
+    }
+
+}

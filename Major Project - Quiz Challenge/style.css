@@ -1,0 +1,429 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.main-body{
+    background-color: rgba(245, 245, 245, 0.48);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    inset: 0;
+    margin: auto;
+    min-height: 100vh;
+}
+
+.main-body img{
+    width: 100%;
+    max-width: 860px;
+}
+
+.main-body button{
+    padding: 10px 40px;
+    text-align: center;
+    font-size: 34px;
+    font-weight: 600;
+    background-color: rgba(53, 189, 58, 1);
+    color: #fff;
+    border: none;
+    border-radius: 9px;
+    box-shadow: 7px 6px 2px 4px rgba(1, 171, 8, 1);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.main-body button:hover{
+    transform: scale(1.2);
+}
+
+.main-body > p{
+    color: rgba(133, 133, 133, 1);
+    font-weight: 500;
+    font-size: 13px;
+    position: absolute;
+    bottom: 18px;
+}
+
+/* ---------------------- QUIZ SECTION BELOW ------------------------------ */
+
+.quiz-section{
+    background-color: rgba(204, 226, 194, 1);
+    position: absolute;
+    inset: 0;
+    transform: scale(0);
+    min-height: 100vh;
+    transition: transform 0.3s ease-in-out;
+}
+
+.quiz-section.blurry{
+    filter: blur(10px);
+}
+
+.quiz-section > p{
+    color: rgba(133, 133, 133, 1);
+    font-weight: 500;
+    font-size: 13px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.quiz-started .quiz-section{
+    transform: scale(1);
+    overflow-y: auto;
+}
+
+.quiz-cards{
+    /* border: 2px solid red; */
+    max-width: 1080px;
+    margin-inline: auto;
+    margin-top: 29px;
+    padding-inline: 30px;
+    position: relative;
+}
+
+.image-section{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    max-width: 200px;
+}
+
+.image-section .unmute{
+    width: 30px;
+}
+.image-section .mute{
+    width: 28px;
+}
+
+.sound-section{
+    cursor: pointer;
+}
+
+.mute{
+    position: absolute;
+    top: 32px;
+    right: 2px;
+    display: none;
+}
+
+.unmute{
+    position: absolute;
+    top: 30px;
+    right: 0;
+}
+
+.sound-off .mute{
+    display: block;
+}
+
+.sound-off .unmute{
+    display: none;
+}
+
+.next-question{
+    color: rgba(1, 171, 8, 1);
+    font-weight: 600;
+    font-size: 20px;
+    position: absolute;
+    bottom: -40px;
+    right: 40px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.next-question:hover{
+    transform: scale(1.1);
+    color: rgb(3, 132, 8);
+}
+
+/* Question Counter section */
+
+.question-counter{
+    background-color: rgba(254, 195, 61, 1);
+    font-weight: 600;
+    font-size: 26px;
+    max-width: 90px;
+    margin-left: auto;
+    text-align: center;
+    border-radius: 7px;
+}
+
+.question-card{
+    background-color: #fff;
+    width: 100%;
+    border-radius: 8px;
+    padding: 32px;
+    margin-block: 20px;
+}
+
+.question-card > p{
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.timer-box{
+    background-color: rgba(2, 164, 9, 0.63);
+    color: #fff;
+    font-weight: 600;
+    font-size: 26px;
+    max-width: 90px;
+    margin-left: auto;
+    text-align: center;
+    border-radius: 7px;
+}
+
+/* Answer choices section */
+
+.answer-section{
+    background-color: rgba(245, 245, 245, 0.88);
+    border-radius: 8px;
+    padding-top: 22px;
+    padding-bottom: 1px;
+    margin-top: 21px;
+}
+
+.choice-box{
+    background-color: #fff;
+    border: 2px solid rgba(217, 217, 217, 1);
+    border-radius: inherit;
+    padding: 20px;
+    margin-inline: 21px;
+    margin-bottom: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.choice-box > p{
+    color: black;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.final-message{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+
+    position: relative;
+
+    /* Change the display to flex "upon clicking" of an option later */
+    display: none;
+}
+
+.clicked .final-message{
+    display: flex;
+}
+
+.final-message .message{
+    font-weight: 400;
+    font-size: 14px;
+    display: none;
+}
+
+.selected-option .wrong-choice{
+    height: 30px;
+    width: 30px;
+    border: 2px solid rgba(255, 122, 122, 1);
+    border-radius: 100%;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: -4px;
+    right: 5px;
+
+    display: none;
+}
+
+
+.selected-option .correct-choice{
+    height: 30px;
+    width: 30px;
+    border: 2px solid rgba(53, 189, 58, 1);
+    border-radius: 100%;
+    background-color: rgba(53, 189, 58, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: -5px;
+    right: 5px;
+
+    display: none;
+}
+
+.wrong-choice{
+    display: flex;
+}
+
+.selected .correct-choice{
+    display: flex;
+} 
+
+.selected-option img{
+    width: 20px;
+    height: 20px;
+}
+
+/* Highlight the correct answer */
+.highlight-correct {
+    background-color: rgba(53, 189, 58, 0.2); /* Light green background */
+    border: 2px solid rgba(53, 189, 58, 1); /* Green border */
+}
+
+/* Highlight the wrong choice */
+.highlight-wrong {
+    background-color: rgba(255, 122, 122, 0.2); /* Light red background */
+    border: 2px solid rgba(255, 122, 122, 1); /* Red border */
+}
+
+/* Correct choice icon display */
+.correct-choice {
+    display: flex;
+}
+
+/* Wrong choice icon display */
+.wrong-choice {
+    display: flex;
+}
+
+/* Hide icons by default */
+.correct-choice,
+.wrong-choice {
+    display: none;
+}
+
+
+/* Score card */
+
+.score-card{
+    position: absolute;
+    border-radius: 10px;
+    transform: translate(-50%,-50%);
+    width: 500px;
+    height: 300px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0px 3px 5px 2px rgba(0, 0, 0, 0.3);
+
+    margin-inline: 100px;
+
+    transition: transform 0.2s ease-in-out;
+    transform: scale(0);
+}
+
+.score-card.show{
+    transform: translate(-50%,-50%);
+    transform: scale(1);
+}
+
+.score-bar{
+    margin-top: 50px;
+    width: 80%;
+    background-color: rgb(243, 84, 84);
+    height: 40px;
+    border-radius: 10px;
+}
+
+.progress-bar{
+    height: 100%;
+    background-color: rgb(80, 167, 80);
+
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.try-again.button{
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: rgba(53, 189, 58, 1);
+    color: #fff;
+    border: none;
+    border-radius: 9px;
+    box-shadow: 7px 6px 2px 4px rgba(1, 171, 8, 1);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Time up Box */
+
+.time-up-box{
+    position: absolute;
+    border-radius: 10px;
+    /* transform: translate(-50%,-50%); */
+    width: 500px;
+    height: 300px;
+    background-color: white;
+
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    box-shadow: 0px 3px 5px 2px rgba(0, 0, 0, 0.3);
+
+    transition: transform 0.2s ease-in-out;
+    transform: scale(0);
+}
+
+.time-up-box.show{
+    /* transform: translate(-50%,-50%); */
+    transform: scale(1);
+}
+
+.time-up-box > p{
+    font-size: larger;
+    font-weight: 500;
+}
+
+.selection-buttons{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 30px;
+}
+
+.Yes.Yes{
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    width: 100px;
+}
+
+.No.No{
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    width: 100px;
+    background-color: rgb(247, 72, 60);
+    box-shadow: 7px 6px 2px 4px rgba(197, 12, 0, 1);
+
+}

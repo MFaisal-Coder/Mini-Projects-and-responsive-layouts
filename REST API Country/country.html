@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Info</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="country.js" defer></script>
+    <link rel="stylesheet" href="country.css">
+</head>
+
+<body>
+    <header class="header-container">
+        <nav class="navbar">
+            <h2 class="nav-title"><a href="/">Where in the world?</a></h2>
+            <div class="dark-mode">
+                <img src="/moon-outline.svg" alt="Moon" width="20px" class="theme">
+                <p class="mode-text"><!-- Dark Mode --></p>
+            </div>
+        </nav>
+    </header>
+    <main class="country-details-container">
+
+        <div class="back-arrow">
+            <!-- This tag from font awesome doesnt work directly hence we have imported link tag from it's cdn on line 7 -->
+            <i class="fa-solid fa-arrow-left arrow">&nbsp;&nbsp;<span>Back</span></i>
+        </div>
+
+        <section class="country-details">
+            <div class="country-info-section">
+                <img class="country-flag" src="" alt="Flag">
+                <div class="region-info">
+                    <h1></h1>
+                    <div class="country-info">
+                        <p><b>Native Name: </b><span class="native-name"></span></p>
+                        <p><b>Population: </b><span class="population"></span></p>
+                        <p><b>Region: </b><span class="region"></span></p>
+                        <p><b>Sub region: </b><span class="sub-region"></span></p>
+                        <p><b>Capital: </b><span class="capital"></span></p>
+                        <p><b>Top Level Domain: </b><span class="domain"></span></p>
+                        <p><b>Currencies: </b><span class="currencies"></span></p>
+                        <p><b>Languages: </b><span class="languages"></span></p>
+                    </div>
+                    <div class="border-countries"><b>Border Countries: &nbsp;&nbsp;</b>
+                        <span class="multiple-borders">
+                            <!-- <a class="borders" href="#"></a> -->
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
